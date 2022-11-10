@@ -36,7 +36,7 @@ function App() {
       <div className="list">
         <ul>
           {tasks.map((data) => {
-            return <List data={data} delete={deleteTask} />;
+            return <List data={data.text} delete={deleteTask} />;
           })}
         </ul>
       </div>
