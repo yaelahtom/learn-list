@@ -19,7 +19,9 @@ function App() {
   };
 
   const deleteTask = (id) => {
-    setTasks(tasks.filter((tasks) => tasks !== id));
+    const newTasks = tasks.filter((tasks) => id !== tasks.id)
+    setTasks(newTasks);
+    console.log(newTasks)
   };
 
   return (
@@ -41,7 +43,7 @@ function App() {
       <div className="list">
         <ul>
           {tasks.map((data) => {
-            return <List key={data.id} data={data.text} delete={deleteTask} />;
+            return <List key={data.id} data={data.text} delete={deleteTask} id={data.id}/>;
           })}
         </ul>
       </div>
